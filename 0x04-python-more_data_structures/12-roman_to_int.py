@@ -2,42 +2,30 @@
 
 def roman_to_int(roman_string):
 
-    if type(roman_string) is not str or roman_string is None:
+    result = 0
 
-        return 0
+    if roman_string and type(roman_string) == str:
 
-    roman_dict = {
+        myDict = {"I": 1, "V": 5, "X": 10, "L": 50,
 
-        'I': 1,
+                  "C": 100, "D": 500, "M": 1000}
 
-        'V': 5,
+        for i in range(len(roman_string)):
 
-        'X': 10,
+            if i != (len(roman_string) - 1) and \
 
-        'L': 50,
+                    myDict[roman_string[i]] < myDict[roman_string[i + 1]]:
 
-        'C': 100,
+                result += int(myDict[roman_string[i + 1]] -
 
-        'D': 500,
+                              (myDict[roman_string[i + 1]] / 10))
 
-        'M': 1000
+                result -= myDict[roman_string[i + 1]]
 
-    }
+            else:
 
-    decs = [roman_dict[x] for x in roman_string]
+                result += myDict[roman_string[i]]
 
-    output = 0
-
-    for i in range(len(decs)):
-
-        output += decs[i]
-
-        if decs[i - 1] < decs[i] and i != 0:
-
-            output -= (decs[i - 1] + decs[i - 1])
-
-    return output
-
-Footer
+    return result
 
 
