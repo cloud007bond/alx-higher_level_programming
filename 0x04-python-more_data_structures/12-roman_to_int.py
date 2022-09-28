@@ -1,31 +1,19 @@
 #!/usr/bin/python3
 
-def roman_to_int(roman_string):
+def complex_delete(my_dict, value):
 
-    result = 0
+    keys_to_del = []
 
-    if roman_string and type(roman_string) == str:
+    for key in my_dict:
 
-        myDict = {"I": 1, "V": 5, "X": 10, "L": 50,
+        if my_dict[key] == value:
 
-                  "C": 100, "D": 500, "M": 1000}
+            keys_to_del.append(key)
 
-        for i in range(len(roman_string)):
+    for key in keys_to_del:
 
-            if i != (len(roman_string) - 1) and \
+        del my_dict[key]
 
-                    myDict[roman_string[i]] < myDict[roman_string[i + 1]]:
-
-                result += int(myDict[roman_string[i + 1]] -
-
-                              (myDict[roman_string[i + 1]] / 10))
-
-                result -= myDict[roman_string[i + 1]]
-
-            else:
-
-                result += myDict[roman_string[i]]
-
-    return result
+    return my_dict
 
 
