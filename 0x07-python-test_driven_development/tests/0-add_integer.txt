@@ -1,0 +1,10 @@
+===============================
+ How to Use 0-add_integer.py
+===============================
+
+This library is very simple, since it only has one function called
+``add_integer()``.
+>>> add_interger = __import__("0-add_integer").add_integer
+
+>>> print(add_interger(2,1))                                                            
+3          
