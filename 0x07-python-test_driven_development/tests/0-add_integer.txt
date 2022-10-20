@@ -1,49 +1,68 @@
-===============================
- How to Use 0-add_integer.py
-===============================
+The ``0-add_integer`` module
+======================
 
-This library is very simple, since it only has one function called
-``add_integer()``.
+Using ``add_integer``
+-------------------
 
->>> add_integer = __import__('0-add_integer').add_integer
+Import the function:
+    >>> add_integer = __import__('0-add_integer').add_integer
 
+Check that Module Doc Exists:
+    >>> m = __import__('0-add_integer').__doc__
+    >>> type(m)
+    <class 'str'>
 
->>> print(add_integer(1, 2))
-3
+Check Module Doc string:
+    >>> len(m) > 1
+    True
 
->>> print(add_integer(100, 5.7))
-105
+Check that Module Function Doc Exists:
+    >>> f = __import__('0-add_integer').add_integer.__doc__
+    >>> type(f)
+    <class 'str'>
 
->>> print(add_integer(-2, 5.7))
-3
+Check Module Function Doc string:
+    >>> len(f) > 1
+    True
 
->>> print(add_integer(2, -5.7))
--3
+Check that function works for int and float values:
+    >>> add_integer(2, 3)
+    5
+    >>> add_integer(3.0, 4.0)
+    7
 
->>> print(add_integer(23.0, 5.7))
-28
+Check for positive and negative values:
+    >>> add_integer(-2, 3)
+    1
+    >>> add_integer(-2, -3)
+    -5
+    >>> add_integer(2, -3)
+    -1
 
->>> print(add_integer(23.0, "g"))
-Traceback (most recent call last):
-TypeError: b must be an integer
+Check that TypeError is thrown for non-int types:
+    >>> add_integer("rad", "lol")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
 
->>> print(add_integer("charles", "clement"))
-Traceback (most recent call last):
-TypeError: a must be an integer
+Check for empty values:
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
 
->>> print(add_integer())
-Traceback (most recent call last):
-TypeError: add_integer() missing 1 required positional argument: 'a'
+Check for just one value:
+    >>> add_integer(3)
+    101
 
->>> print(add_integer(4))
-102
+Check for float Nan:
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
 
->>> print(add_integer(4))
-102
-
->>> print(add_integer(0))
-98
-
->>> print(add_integer(p))
-Traceback (most recent call last):
-NameError: name 'p' is not defined
+Check for infinity:
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
