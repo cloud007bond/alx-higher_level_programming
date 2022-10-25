@@ -1,5 +1,6 @@
+#!/usr/bin/python3
 
-dule for task 1 """
+""" Module for task 1 """
 
 
 
