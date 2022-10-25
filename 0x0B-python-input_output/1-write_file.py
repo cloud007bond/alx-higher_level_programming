@@ -1,7 +1,14 @@
-#!/usr/bin/python3
-""" Module for task 1 """
+
+dule for task 1 """
+
+
+
+
 
 def write_file(filename="", text=""):
-    """ function for writting files """
-    with open(filename, "w", enconding="utf-8") as f:
+
+    """ Function for writing files """
+
+    with open(filename, "w", encoding="utf-8") as f:
+
         return f.write(text)
