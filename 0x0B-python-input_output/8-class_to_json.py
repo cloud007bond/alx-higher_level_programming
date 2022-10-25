@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-""" A module for task 8 """
+"""
+Contains the "class_to_json" function
+"""
+
 
 def class_to_json(obj):
-    """ A function to convert obj to serializable dict """
+    """returns the dictionary description with simple data structure
+    (list, dictionary, string, integer and boolean)
+    for JSON serialization of an object"""
     return obj.__dict__

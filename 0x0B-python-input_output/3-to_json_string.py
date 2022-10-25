@@ -1,7 +1,11 @@
-#1/usr/bin?python3
-""" Module for task 3 """
-import json 
+#!/usr/bin/python3
+"""
+contain the JSON string
+"""
+
+import json
+
 
 def to_json_string(my_obj):
-    """ function for converting to json """
+    """returns the JSON representation of an object (string)"""
     return json.dumps(my_obj)

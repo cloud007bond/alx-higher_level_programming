@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-""" model for task 4 """
+"""
+contain the JSON string
+"""
+
 import json
 
-def from_json_string(my_str):
-    """ fumction for converting to json """
-    return json.loads(my_str)
 
+def to_json_string(my_obj):
+    """returns the JSON representation of an object (string)"""
+    return json.dumps(my_obj)

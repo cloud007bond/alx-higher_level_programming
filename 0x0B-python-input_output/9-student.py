@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-""" Module for task 9 """
+"""
+Contains the clas "Student"
+"""
 
 
 class Student:
-    """ My Student class """
+    """Representation of a student"""
     def __init__(self, first_name, last_name, age):
-        """ Initialization """
+        """Initializes the student"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self):
-        """ Retrieves a serialized version of the object """
+        """returns a dictionary representation of a Student instance"""
         return self.__dict__
